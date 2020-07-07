@@ -9,13 +9,9 @@ This course assumes basic knowledge of programming in Python, but not much else!
 # Environment Setup
 ## System Requirements
 Some prerequisites for your system:
-*   Linux dev environment (samples in course use Ubuntu 18.04 LTS)
-    *   If you're using Windows 10, you can run Linux natively using WSL! 
-        Installation instructions [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
-    *   If you want to create a VM, check out [this instructional video](https://www.youtube.com/watch?v=diIW3fgewhI)
-        on creating a VirtualBox VM for Ubuntu.
-*   Python 3 (samples in course use Python 3.6)
-*   IDE of your choosing (e.g., VS Code, Sublime, Atom)
+*   No longer requires Linux, see https://github.com/supernaut11/tdd-workshop.git for the Linux version
+*   Python 3 (samples in course use Python 3.8)
+*   IDE of your choosing (e.g., PyCharm, VS Code, Sublime, Atom)
 
 ## Pre-Workshop Setup
 1.  Download this repository to your local system. Here are a couple ways you 
@@ -23,40 +19,30 @@ Some prerequisites for your system:
 
     Using git:
 
-        git clone https://github.com/supernaut11/tdd-workshop.git
+        git clone https://github.com/hallsjuju4/tdd-workshop.git
+    
+2.  Create python venv folder for this project
 
-    Using curl:
+        cd tdd-workshop
+        python -m venv venv
+      
+3.  Make sure the Python virtual environment is behaving as expected
 
-        curl -LO https://github.com/supernaut11/tdd-workshop/archive/master.zip
-        unzip master.zip
+        .\venv\Scripts\activate.bat
 
-    Using a web browser:
-
-        https://github.com/supernaut11/tdd-workshop/archive/master.zip
-
-2.  Install the python3-venv package
-
-        sudo apt install python3-venv
-
-3.  Run the initialization script
-
-        ./init.sh
-
-    Note that 'python3' must be defined for the script to work. If it isn't, 
-    create an alias or symbolic link to your Python 3 installation and name 
-    it 'python3'.
-
-4.  Make sure the Python virtual environment is behaving as expected
-
-        . env/bin/activate
-
-    This should result in a string (env) appearing before your shell prompt.
+    This should result in a string (venv) appearing before your shell prompt.
     Make sure that the Python modules we need are installed:
 
-        python3 -m pytest --version
+4.  Install pytest and pytest coverage
+
+        pip install pytest
+        pip install pytest-cov
+        python -m pytest --version
     
     Should report something like:
 
         This is pytest version 5.4.3, imported from <some path>
         setuptools registered plugins:
           pytest-cov-2.10.0 at <some path>
+
+5.  Setup your IDE to use this new venv for this project.
